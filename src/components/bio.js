@@ -38,7 +38,8 @@ function Bio() {
               }}
             />
             <p>
-              Hi, I'm <strong>{author}</strong>. This is my blog where I write mostly about computers but not only.
+              Hi, I'm <strong>{author}</strong>. This is my blog where I write
+              mostly about computers but not only.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 Follow me on Twitter
