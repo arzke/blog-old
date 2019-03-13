@@ -1,0 +1,1 @@
+{"data":{"site":{"siteMetadata":{"title":"Blog"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Hello_","fields":{"slug":"/hello-world/"},"frontmatter":{"date":"March 13, 2019","title":"How to name event handlers in React","description":"Hint there might be a better naming than handleClick"}}}]}},"pageContext":{}}

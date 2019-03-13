@@ -1,1 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog]]></title><description><![CDATA[My blog, where I mostly write about computers but not only.]]></description><link>https://brundozer.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 11 Mar 2019 19:34:25 GMT</lastBuildDate><item><title><![CDATA[Hello World]]></title><description><![CDATA[Hello!]]></description><link>https://brundozer.github.io//hello-world/</link><guid isPermaLink="false">https://brundozer.github.io//hello-world/</guid><pubDate>Mon, 11 Mar 2019 18:29:39 GMT</pubDate><content:encoded>&lt;p&gt;Hello!&lt;/p&gt;</content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog]]></title><description><![CDATA[My blog, where I mostly write about computers but not only.]]></description><link>https://brundozer.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 13 Mar 2019 19:21:14 GMT</lastBuildDate><item><title><![CDATA[How to name your event handlers in React]]></title><description><![CDATA[Code examples can be confusing and misleading, especially when we assume they’re following some kind of best practices 
+and that we can…]]></description><link>https://brundozer.github.io//how-to-name-your-event-handlers-in-react/</link><guid isPermaLink="false">https://brundozer.github.io//how-to-name-your-event-handlers-in-react/</guid><pubDate>Wed, 13 Mar 2019 09:26:15 GMT</pubDate><content:encoded>&lt;p&gt;Code examples can be confusing and misleading, especially when we assume they’re following some kind of best practices
+and that we can blindly rely on them.
+But we must keep in mind that code samples are not meant to be clean, but rather to demonstrate something with the
+minimal amount of code.&lt;/p&gt;
+&lt;p&gt;Therefore, considering that examples show us the right way to do something
+is not relevant. One good illustration of this is how people usually name event handlers
+in React. Here is a piece of code &lt;a href=&quot;https://reactjs.org/docs/handling-events.html&quot;&gt;you might be familiar with&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// This function does something&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleClick&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The name of the component and the label of the button have been
+deliberately set to Foo because they’re not relevant to the point I’m making here.&lt;/p&gt;
+&lt;h2&gt;So what is wrong with this example?&lt;/h2&gt;
+&lt;p&gt;The problem here is that &lt;strong&gt;handleClick doesn’t reveal anything about what the function does&lt;/strong&gt;.
+Instead, it tells us how the function is used. Still, it happens that when you ask someone why they name
+their handler this way, the answer you get is ”&lt;em&gt;everybody does this&lt;/em&gt;”. Unfortunately, &lt;a href=&quot;https://en.wikipedia.org/wiki/Argumentum_ad_populum&quot;&gt;this cannot be considered a valid
+argument&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You might remember from Uncle Bob’s &lt;em&gt;Clean Code&lt;/em&gt; the following rule:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Write explicit code – naming variables and methods can reveal the entire intent of the code&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here, our code is not explicit. We know that &lt;em&gt;something&lt;/em&gt; is happening when clicking the button, but we have
+no idea &lt;em&gt;what&lt;/em&gt; it is.&lt;/p&gt;
+&lt;p&gt;Another problem here is that we’re tightly coupling the function to its caller, meaning that
+if we decide to perform the same action on a different event, we have to
+rename the function. This would make no sense as the body of the function hasn’t changed.&lt;/p&gt;
+&lt;p&gt;Finally, what should we do if our component renders two buttons with different click handlers? How should we name them?&lt;/p&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;Name your function after what it does.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;clearForm&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// This function does something&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MySuperComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;clearForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Event handlers are nothing more than functions, so here the same rules apply for the naming.
+Receiving an event in their parameters does not make them any special.
+If in the future your function does something different then it makes perfect sense
+to rename it. &lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Finding a good name that reveals the intent of your code is often tricky. But using a
+name that is too generic or doesn’t answer the &lt;em&gt;what&lt;/em&gt; is by no means better.
+Everything that is said in this post might seem obvious, but I’m still surprised to see how many people keep using
+bad names for their handlers even in production code. This is a quick win.&lt;/p&gt;</content:encoded></item></channel></rss>
