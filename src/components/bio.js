@@ -38,7 +38,9 @@ function Bio() {
               }}
             />
             <p>
-              Hi, I'm <strong>{author}</strong>. This is my blog where I write
+              Hi, I'm <strong>{author}</strong>, a <a href="http://manifesto.softwarecraftsmanship.org" title="Read the Software Crasftsmanship Manifesto">software craftsman</a> who
+              loves clean code. <br/>
+              This is my blog where I write
               mostly about computers but not only.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
